@@ -26,9 +26,7 @@ function destroyBoxes() {
 
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
-const input = document.querySelector(
-  'input[type="number"]'
-);
+const input = document.querySelector('input[type="number"]');
 
 createBtn.addEventListener("click", () => {
   const sum = Number(input.value);
