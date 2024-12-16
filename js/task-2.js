@@ -27,24 +27,7 @@ const images = [
 
 const galleryListEl = document.querySelector(".gallery");
 
-const createGalleryCard = (pictureInfo) => {
-  const galleryItemEl = document.createElement("li");
-  galleryItemEl.classList.add("js-gallery-item");
-
-  const galleryLinkEl = document.createElement("a");
-  galleryLinkEl.href = "#";
-  galleryItemEl.append(galleryLinkEl);
-
-  const galleryImgEl = document.createElement("img");
-
-  galleryImgEl.src = pictureInfo.url;
-  galleryImgEl.alt = pictureInfo.alt;
-
-  galleryLinkEl.append(galleryImgEl);
-  return galleryItemEl;
-};
-
-images.forEach((image) => {
-  const galleryCard = createGalleryCard(image);
-  galleryListEl.appendChild(galleryCard);
-});
+const galleryMark = images
+  .map(({ url, alt }) => `<li><img src='${url}' alt='${alt}'/></li>`)
+  .join("");
+galleryListEl.insertAdjacentHTML("beforeend", galleryMark);
